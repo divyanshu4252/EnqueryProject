@@ -1,9 +1,11 @@
 import express from 'express'
+import cors from 'cors'
 import dotenv from 'dotenv'
 dotenv.config()
 import connectDB from './db/connectdb.js'
 import web from './routes/web.js'
 const app = express()
+app.use(cors())
 const port = process.env.PORT || 3000
 const DATABASE_URL = process.env.DB_URL 
 
