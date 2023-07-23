@@ -9,17 +9,14 @@ class homeController{
             res.status(201).send({success: true, message: result}) 
             
         } catch (error) {
-            console.log(error)
             res.status(400).send("Error")
         }
     }
     static async getAllDoc (req,res){
         try{
             const result = await enquiryModel.find()
-            //console.log(result)
             res.status(200).send({success: true, message: result})
         }catch(error){
-            console.log(error)
             res.status(400).send("Error")
         }
     }
@@ -28,10 +25,8 @@ class homeController{
         //console.log(req.body)
         try{
             const result = await enquiryModel.findByIdAndUpdate(req.params.id, req.body)
-            //console.log(result)
             res.status(201).send({success: true, message: result})
         } catch(error){
-            console.log(error)
             res.status(400).send("Error")
         }
     }
@@ -43,18 +38,14 @@ class homeController{
             res.status(204).send({success: true, message: result})
 
         } catch(error){
-            console.log(error)
             res.status(400).send("Error")
         }
     }
     static async getSingleDoc (req,res){
         try{
-            console.log(req.params)
             const result = await enquiryModel.find({sName:req.params.sName},'sName dateOfEnquiry course status email mobile')
-            //console.log(result)
             res.status(200).send({success: true, message: result})
         }catch(error){
-            console.log(error)
             res.status(400).send("Error")
         }
     }
