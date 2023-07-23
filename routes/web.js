@@ -14,5 +14,7 @@ router.put("/update-enquiry/:id", homeController.updateDocById)
 
 router.delete("/delete-enquiry/:id", homeController.deleteDocById)
 
+router.get("/single-enquiry/:sName", homeController.getSingleDoc)
+
 export default router
 
